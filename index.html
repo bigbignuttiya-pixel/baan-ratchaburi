@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>บ้านราชบุรี</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE occasion — a calm architectural project presentation for the owner and builder
+   IDEA an architect's presentation board: grid-line dimensions, sheet references from the drawing set, renders mounted edge to edge
+   PICTURE the full-bleed exterior render with the title in its lower-left corner; plans carry numbered room pins
+   COLOUR white ground, charcoal ink from the window frames, stone grey support, teak-wood accent; night = charcoal ground
+   TYPE IBM Plex Sans Thai 700 display + 400 text
+   LAYOUT laptop: hero full-bleed, figures in one ruled row, then bands; phone: same order stacked, nav collapses to the 3D button */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#131416);--ink:light-dark(#1b1c1f,#ecebe8);--mut:light-dark(#5d5f63,#a5a6a8);--line:light-dark(#e3e1dc,#2c2e31);--stone:light-dark(#8f8a82,#a29d95);--wood:light-dark(#8c5a30,#d29a63);--soft:light-dark(#f4f2ee,#1b1c1f);--char:#1f2124}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 "IBM Plex Sans Thai",system-ui,sans-serif;overflow-x:clip}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+.band{padding-block:clamp(36px,5vw,72px);padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+h1,h2,h3{line-height:1.12;letter-spacing:-.01em;margin:0}
+h2{font-size:clamp(26px,3.2vw,38px);font-weight:700;max-width:22em}
+h3{font-size:18px;font-weight:600}
+.lead{color:var(--mut);max-width:62ch;margin:10px 0 0}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:22px;height:58px;padding-inline:max(5vw,16px);max-width:none}
+nav b{font-size:18px;font-weight:700;margin-right:auto}
+nav a{text-decoration:none;font-size:15px;color:var(--mut)}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font:600 15px/1 inherit;text-decoration:none;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+.btn.pri{background:var(--wood);color:#fff}
+.btn.pri:hover{filter:brightness(1.08)}
+.btn.ghost{border-color:rgba(255,255,255,.55);color:#fff}
+nav .btn{color:#fff;padding:9px 14px}
+.hero{position:relative;height:clamp(440px,74vh,780px);overflow:hidden;background:#cfd6da}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(10,10,12,.7)),linear-gradient(90deg,rgba(10,10,12,.5),rgba(0,0,0,0) 60%)}
+.hero .cap{position:absolute;z-index:1;left:max(5vw,16px);right:max(5vw,16px);bottom:clamp(22px,4vw,48px);color:#fff}
+.hero h1{font-size:clamp(46px,7vw,88px);font-weight:700}
+.hero p{margin:8px 0 18px;font-size:clamp(16px,1.6vw,19px);max-width:40ch;opacity:.94}
+.hero .row{display:flex;gap:10px;flex-wrap:wrap}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(10.5em,1fr));border-bottom:1px solid var(--line)}
+.figs div{padding:18px max(2vw,16px);border-right:1px solid var(--line)}
+.figs div:last-child{border-right:0}
+.figs b{display:block;font-size:clamp(22px,2.6vw,32px);font-weight:700;line-height:1.15}
+.figs span{font-size:14px;color:var(--mut)}
+.gal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:26px}
+.gal button{all:unset;cursor:zoom-in;position:relative;overflow:hidden;border-radius:6px;aspect-ratio:16/9;background:var(--soft)}
+.gal button:first-child{grid-column:span 2;grid-row:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gal button:hover img{transform:scale(1.03)}
+.gal span{position:absolute;left:10px;bottom:8px;color:#fff;font-size:14px;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+.vids{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:26px}
+.vids video{width:100%;aspect-ratio:16/9;border-radius:6px;background:#000}
+.vids p{margin:8px 0 0;color:var(--mut);font-size:15px}
+.tabs{display:flex;gap:6px;margin-top:22px}
+.tabs button{font:600 15px inherit;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.plan{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:28px;margin-top:18px;align-items:start}
+.pfig{position:relative;border-radius:6px;overflow:hidden;background:var(--soft)}
+.pin{position:absolute;transform:translate(-50%,-50%);width:28px;height:28px;border-radius:50%;background:var(--char);color:#fff;font:600 14px/28px inherit;text-align:center;box-shadow:0 0 0 2px #fff;transition:transform .2s,background .2s}
+.pin.on{background:var(--wood);transform:translate(-50%,-50%) scale(1.25)}
+table{width:100%;border-collapse:collapse;font-size:15.5px}
+th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--mut);font-size:14px}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.rm{cursor:pointer}
+tr.rm:hover td,tr.rm.on td{background:color-mix(in srgb,var(--wood) 10%,transparent)}
+tfoot td{font-weight:600;border-bottom:0}
+.num{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--char);color:#fff;font-size:12.5px;margin-right:8px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;margin-top:24px}
+.note{font-size:14px;color:var(--mut);margin-top:10px}
+.chg{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:32px;align-items:center;margin-top:24px}
+.chg img{border-radius:6px}
+.chg ol{margin:0;padding:0;list-style:none;counter-reset:c}
+.chg li{counter-increment:c;padding:14px 0 14px 44px;border-bottom:1px solid var(--line);position:relative}
+.chg li::before{content:counter(c);position:absolute;left:0;top:14px;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--wood);color:var(--wood);display:grid;place-items:center;font-weight:600}
+.chg li b{display:block}
+.dark{background:var(--char);color:#ecebe8}
+.dark .lead{color:#b7b8ba}
+.feat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:28px 0 30px}
+.feat div{border-top:2px solid var(--wood);padding-top:12px}
+.feat p{margin:6px 0 0;color:#b7b8ba;font-size:15px}
+footer{border-top:1px solid var(--line);font-size:14px;color:var(--mut)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between}
+#lb{position:fixed;inset:0;z-index:50;background:rgba(8,8,10,.94);display:none;align-items:center;justify-content:center;padding:16px}
+#lb.on{display:flex}
+#lb img{max-height:86vh;border-radius:4px}
+#lb p{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:#ddd;margin:0}
+#lb button{position:absolute;top:10px;background:none;border:0;color:#fff;font-size:34px;cursor:pointer;padding:10px 16px}
+#lb .x{right:4px}#lb .pv{left:4px;top:45%}#lb .nx{right:4px;top:45%}
+@media(max-width:900px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))}.feat{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){nav a:not(.btn){display:none}.plan,.two,.chg,.vids{grid-template-columns:minmax(0,1fr)}.figs div{border-right:0;border-bottom:1px solid var(--line)}}
+@media(max-width:600px){table{font-size:14px}th,td{padding:7px 4px}.pin{width:22px;height:22px;font-size:12px;line-height:22px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gal img{transition:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>บ้านราชบุรี</b><a href="#gallery">ภาพ</a><a href="#video">วิดีโอ</a><a href="#plans">ผังบ้าน</a><a href="#specs">วัสดุ</a><a href="#changes">การแก้แบบ</a><a class="btn pri" href="studio.html">เปิดโมเดล 3D</a></div></nav>
+
+<header class="hero">
+  <img src="img/01_exterior_day.jpg" alt="ภาพจำลองภายนอกบ้านราชบุรี ตอนกลางวัน">
+  <div class="cap">
+    <h1>บ้านราชบุรี</h1>
+    <p>บ้านพักอาศัย 2 ชั้น หลังคาซ่อนหลังผนังกันตก ห้องรับแขกเปิดออกเฉลียงด้วยประตูกระจก 5.50 ม. · ต.หน้าเมือง อ.เมือง จ.ราชบุรี</p>
+    <div class="row"><a class="btn pri" href="studio.html">เดินชมโมเดล 3D</a><a class="btn ghost" href="#video">ดูวิดีโอ 360°</a></div>
+  </div>
+</header>
+<div class="figs">
+  <div><b>≈ 202 ตร.ม.</b><span>พื้นที่ใช้สอยภายใน</span></div>
+  <div><b>3</b><span>ห้องนอน</span></div>
+  <div><b>3</b><span>ห้องน้ำ</span></div>
+  <div><b>16.00 × 14.80 ม.</b><span>ขนาดตามเส้นกริด</span></div>
+  <div><b>+7.70 ม.</b><span>ความสูงถึงผนังกันตก</span></div>
+</div>
+
+<section class="band" id="gallery"><div class="wrap">
+  <h2>บ้านทั้งหลังในภาพเรนเดอร์ จากสวนหน้าบ้านถึงห้องนอน</h2>
+  <p class="lead">ภาพทุกภาพเรนเดอร์จากโมเดล 3D ตามแบบล่าสุดที่ยืนยันแล้ว แตะภาพเพื่อดูขนาดเต็ม</p>
+  <div class="gal" id="gal"></div>
+</div></section>
+
+<section class="band" id="video" style="background:var(--soft)"><div class="wrap">
+  <h2>หมุนรอบบ้าน 360° แล้วเดินเข้าไปข้างใน</h2>
+  <div class="vids">
+    <div><video src="house_360.mp4" controls playsinline preload="metadata" poster="img/08_aerial.jpg"></video><p>รอบบ้าน 360° · 15 วินาที</p></div>
+    <div><video src="house_tour.mp4" controls playsinline preload="metadata" poster="img/02_living.jpg"></video><p>เดินชมภายใน: เฉลียง ห้องรับแขก ครัว ห้องทานอาหาร บันได และห้องนอน 1 · 25 วินาที</p></div>
+  </div>
+</div></section>
+
+<section class="band" id="plans"><div class="wrap">
+  <h2>ชั้นล่างเป็นพื้นที่ส่วนกลาง ห้องนอนทั้งสามอยู่ชั้นบน</h2>
+  <p class="lead">ผังจากโมเดล อ้างอิงแบบแปลนพื้น A-04 และ A-05 พื้นที่วัดจากแนวกริดของแต่ละห้อง แตะชื่อห้องเพื่อดูตำแหน่ง</p>
+  <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-l="1">ชั้น 1</button><button role="tab" aria-selected="false" data-l="2">ชั้น 2</button></div>
+  <div class="plan">
+    <div class="pfig" id="pfig"><img id="pimg" src="img/09_plan_floor1.jpg" alt="ผังชั้น 1"></div>
+    <div><table><thead><tr><th>ห้อง</th><th>ระดับพื้น</th><th class="n">ตร.ม.</th></tr></thead><tbody id="rooms"></tbody><tfoot><tr><td>รวมภายในอาคาร</td><td></td><td class="n" id="tot"></td></tr></tfoot></table>
+      <p class="note" id="pnote"></p></div>
+  </div>
+</div></section>
+
+<section class="band" id="specs" style="background:var(--soft)"><div class="wrap">
+  <h2>โครงสร้างตามรายการประกอบแบบ วัสดุตกแต่งตามที่เลือกไว้ในโมเดล</h2>
+  <div class="two">
+    <div><h3>รายการประกอบแบบ (A-01)</h3><table><tbody>
+      <tr><th>ฐานราก</th><td>ฐานราก คสล. บนเสาเข็มเจาะ (ดูแบบวิศวกรรม)</td></tr>
+      <tr><th>โครงสร้าง</th><td>คสล. หล่อในที่ ร่วมกับโครงสร้างเหล็ก</td></tr>
+      <tr><th>พื้น</th><td>พื้น คสล. วางบนคาน</td></tr>
+      <tr><th>ผนัง</th><td>ก่ออิฐมอญ ฉาบปูนเรียบ ทาสี</td></tr>
+      <tr><th>หลังคา</th><td>โครงเหล็ก หลังคาซ่อนหลังผนังกันตก (+4.50 / +7.70)</td></tr>
+      <tr><th>ระดับ</th><td>±0.00 = ระดับดินเฉลี่ย ณ วันตีผัง · พื้นชั้น 1 +0.60 · ครัว ±0.00 · ชั้น 2 +3.90</td></tr>
+    </tbody></table></div>
+    <div><h3>วัสดุตกแต่งในโมเดล</h3><table><tbody>
+      <tr><th>ผนังภายนอก</th><td>ฉาบเรียบสีขาวอุ่น · ผนังหินตกแต่งโทนเทา · กรอบอะลูมิเนียมสีดำ</td></tr>
+      <tr><th>ห้องรับแขก</th><td>แกรนิตโต้ 60×120 ลายหินเทา · ผนังสีทา</td></tr>
+      <tr><th>ครัว / ทานอาหาร</th><td>แกรนิตโต้ 60×60 ขาวด้าน · เคาน์เตอร์ท็อปควอตซ์</td></tr>
+      <tr><th>ห้องนอน</th><td>ห้องนอน 1 SPC ลายวอลนัท · ห้องนอน 2–3 ลามิเนตลายโอ๊ค 8 มม.</td></tr>
+      <tr><th>ห้องน้ำ</th><td>กระเบื้องเซรามิก พื้น 30×30 ผนัง 30×60</td></tr>
+      <tr><th>เฉลียง</th><td>พื้นไม้ ฝ้าระแนงไม้ ประตูกระจกบานเลื่อน 4 บาน</td></tr>
+    </tbody></table><p class="note">เปลี่ยนพื้น ผนัง สีเฟอร์นิเจอร์ และผิวไม้ได้ทีละห้องในโมเดล 3D</p></div>
+  </div>
+</div></section>
+
+<section class="band" id="changes"><div class="wrap">
+  <h2>ด้านหน้าห้องรับแขกปรับใหม่ เปิดรับเฉลียงเต็มแนว</h2>
+  <div class="chg">
+    <img src="img/07_living_facade.jpg" alt="ด้านหน้าห้องรับแขกหลังแก้แบบ">
+    <div><ol>
+      <li><b>ย้ายผนังหินไปชิดมุมตัวบ้าน 2 ชั้น</b>เดิมอยู่ระหว่างหน้าต่างกับประตูบานเลื่อน</li>
+      <li><b>ประตูกระจกบานเลื่อนกว้าง 5.50 ม. แบ่ง 4 บาน</b>สูง 2.55 ม. เท่าเดิม</li>
+      <li><b>ระแนงไม้และหน้าต่างหลังระแนงเปลี่ยนเป็นผนังหิน</b>รวมเป็นผนังหินผืนเดียวกว้าง 3.20 ม.</li>
+    </ol><p class="note">ยืนยันแบบเมื่อ 23 พ.ย. 2569</p></div>
+  </div>
+</div></section>
+
+<section class="band dark"><div class="wrap">
+  <h2>เข้าไปเดิน จัดห้อง และแก้แบบในโมเดล 3D</h2>
+  <p class="lead">ใช้ได้บนมือถือและคอมพิวเตอร์ สิ่งที่แก้จะถูกจำไว้ในเครื่องที่ใช้อยู่</p>
+  <div class="feat">
+    <div><h3>เดินชมภายใน</h3><p>เดินด้วยจอยสติ๊ก ขึ้นบันไดได้จริง แตะชื่อห้องเพื่อพาไปทันที</p></div>
+    <div><h3>ผังห้องตัดทีละชั้น</h3><p>มองจากด้านบน เลือกห้อง ปรับสีผนัง พื้น ผิวไม้ และไฟ</p></div>
+    <div><h3>จัดเฟอร์นิเจอร์</h3><p>ลากย้าย หมุน เพิ่มจากรายการขนาดตามท้องตลาด วาดผนังกั้นห้อง</p></div>
+    <div><h3>แก้ผนัง ประตู หน้าต่าง</h3><p>เปลี่ยนวัสดุปิดผิว ปรับขนาด เจาะหรือลบช่อง ลบผนังภายใน</p></div>
+  </div>
+  <a class="btn pri" href="studio.html">เปิดโมเดล 3D</a>
+</div></section>
+
+<footer class="band"><div class="wrap">
+  <span>บ้านราชบุรี · บ้านพักอาศัย 2 ชั้น ต.หน้าเมือง อ.เมือง จ.ราชบุรี</span>
+  <span>อ้างอิงแบบก่อสร้างสถาปัตยกรรม A-01 ถึง A-19 · ภาพทั้งหมดเป็นภาพจำลองจากโมเดล 3D ไม่ใช่ภาพถ่ายจริง · อัปเดต 24 พ.ย. 2569</span>
+</div></footer>
+
+<div id="lb" role="dialog" aria-label="ภาพขนาดเต็ม"><button class="x" aria-label="ปิด">×</button><button class="pv" aria-label="ก่อนหน้า">‹</button><img alt=""><button class="nx" aria-label="ถัดไป">›</button><p></p></div>
+
+<script>
+{
+const IMGS=[['01_exterior_day','ภายนอก ยามบ่าย'],['02_living','ห้องรับแขก'],['03_kitchen','ครัว'],['04_dining','ห้องทานอาหาร เพดานสูง 2 ชั้น'],['05_master_bedroom','ห้องนอน 1'],['06_exterior_night','ภายนอก ยามค่ำ'],
+  ['07_living_facade','ด้านหน้าห้องรับแขก'],['08_aerial','มุมสูง'],['11_stair_hall','โถงและบันได']];
+const ROOMS=[
+  {n:1,id:'ห้องรับแขก',lv:1,f:'+0.60',a:42.75,x:59.96,y:21.94},{n:2,id:'ครัว',lv:1,f:'±0.00',a:24.75,x:37.16,y:22.35},{n:3,id:'โถง / บันได',lv:1,f:'+0.60',a:20.28,x:41.5,y:47},
+  {n:4,id:'ห้องน้ำ 3',lv:1,f:'+0.50',a:5.72,x:29.52,y:51},{n:5,id:'ห้องทานอาหาร',lv:1,f:'+0.60',a:40.95,x:35.44,y:65.52},{n:6,id:'เฉลียง',lv:1,f:'+0.60',a:17.1,x:59.96,y:39.1,out:1},
+  {n:1,id:'ห้องนอน 1',lv:2,f:'+3.90',a:19.39,x:34.18,y:71.58},{n:2,id:'ห้องนอน 2',lv:2,f:'+3.30',a:9,x:40.17,y:15.6},{n:3,id:'ห้องนอน 3',lv:2,f:'+3.30',a:11.25,x:31.15,y:19.97},
+  {n:4,id:'โถงชั้น 2',lv:2,f:'+3.90',a:15.8,x:41.2,y:47},{n:5,id:'ห้องน้ำ 1',lv:2,f:'+3.80',a:7.98,x:26.92,y:54.69},{n:6,id:'ห้องน้ำ 2',lv:2,f:'+3.80',a:3.96,x:33.39,y:50.5},{n:7,id:'ระเบียง',lv:2,f:'+3.90',a:1.92,x:46.2,y:66.84,out:1}];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const gal=document.getElementById('gal');
+gal.innerHTML=IMGS.map(([f,t],i)=>`<button data-i="${i}" aria-label="${esc(t)}"><img loading="lazy" src="img/${f}.jpg" alt="${esc(t)}"><span>${esc(t)}</span></button>`).join('');
+const lb=document.getElementById('lb'),lbi=lb.querySelector('img'),lbp=lb.querySelector('p');let cur=0;
+const show=i=>{cur=(i+IMGS.length)%IMGS.length;lbi.src='img/'+IMGS[cur][0]+'.jpg';lbi.alt=IMGS[cur][1];lbp.textContent=IMGS[cur][1];lb.classList.add('on');};
+gal.addEventListener('click',e=>{const b=e.target.closest('button');if(b)show(+b.dataset.i);});
+lb.querySelector('.x').onclick=()=>lb.classList.remove('on');lb.querySelector('.pv').onclick=()=>show(cur-1);lb.querySelector('.nx').onclick=()=>show(cur+1);
+lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('on');});
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1);});
+const pfig=document.getElementById('pfig'),pimg=document.getElementById('pimg'),tb=document.getElementById('rooms');
+function plan(lv){pimg.src=lv===1?'img/09_plan_floor1.jpg':'img/10_plan_floor2.jpg';pimg.alt='ผังชั้น '+lv;
+  const rs=ROOMS.filter(r=>r.lv===lv);pfig.querySelectorAll('.pin').forEach(p=>p.remove());
+  rs.forEach(r=>{const d=document.createElement('div');d.className='pin';d.style.left=r.x+'%';d.style.top=r.y+'%';d.textContent=r.n;d.dataset.n=r.n;pfig.appendChild(d);});
+  tb.innerHTML=rs.map(r=>`<tr class="rm" data-n="${r.n}"><td><span class="num">${r.n}</span>${esc(r.id)}</td><td style="white-space:nowrap">${esc(r.f)}</td><td class="n">${r.a.toFixed(2)}</td></tr>`).join('');
+  const tot=rs.filter(r=>!r.out).reduce((s,r)=>s+r.a,0);document.getElementById('tot').textContent=tot.toFixed(2);
+  document.getElementById('pnote').textContent=lv===1?'ไม่รวมเฉลียง 17.10 ตร.ม. · ส่วนปลายห้องทานอาหารเพดานสูงโล่งถึงชั้น 2':'ไม่รวมระเบียง 1.92 ตร.ม. · ห้องนอน 2–3 อยู่ระดับ +3.30 ต่ำกว่าโถง 0.60 ม.';
+  document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-selected',+b.dataset.l===lv));}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>plan(+b.dataset.l));
+const hi=n=>{pfig.querySelectorAll('.pin').forEach(p=>p.classList.toggle('on',p.dataset.n==n));tb.querySelectorAll('tr').forEach(t=>t.classList.toggle('on',t.dataset.n==n));};
+tb.addEventListener('click',e=>{const t=e.target.closest('tr');if(t)hi(t.dataset.n);});
+tb.addEventListener('mouseover',e=>{const t=e.target.closest('tr');if(t)hi(t.dataset.n);});
+plan(1);
+}
+</script>
+</body>
+</html>
