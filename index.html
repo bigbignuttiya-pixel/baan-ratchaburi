@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#1f2124">
 <meta property="og:type" content="website"><meta property="og:title" content="บ้านราชบุรี">
 <meta property="og:description" content="บ้านพักอาศัย 2 ชั้น — ภาพเรนเดอร์ วิดีโอ 360° ผังบ้าน และโมเดล 3D เดินชมได้">
-<meta property="og:image" content="/img/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image" content="https://baan-ratchaburi.vercel.app/img/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,10 +116,21 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-betw
 @media(max-width:760px){nav a:not(.btn){display:none}.plan,.two,.chg,.vids{grid-template-columns:minmax(0,1fr)}.figs div{border-right:0;border-bottom:1px solid var(--line)}}
 @media(max-width:600px){table{font-size:14px}th,td{padding:7px 4px}.pin{width:22px;height:22px;font-size:12px;line-height:22px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gal img{transition:none}}
+
+.dw{margin-top:20px}.dw img{width:100%;border:1px solid var(--line);border-radius:6px;background:#fff}
+.dwg2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.dwg2 figure{margin:0}.dwg2 figcaption,.sunc{font-size:14px;color:var(--mut);margin-top:6px}
+.sunr{width:100%;margin-top:14px;accent-color:var(--wood)}
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}
+.tiers div{border:1px solid var(--line);border-radius:8px;padding:16px}.tiers div.on{border-color:var(--wood);box-shadow:inset 0 3px 0 var(--wood)}
+.tiers b{display:block;font-size:26px}.tiers p{margin:6px 0 0;color:var(--mut);font-size:14.5px}
+.gantt{margin-top:22px;display:grid;grid-template-columns:minmax(150px,260px) repeat(10,minmax(0,1fr));gap:4px 3px;font-size:14px;align-items:center}
+.gantt .h{color:var(--mut);text-align:center;font-size:12.5px}.gantt i{height:16px;border-radius:3px;background:var(--wood);display:block}
+@media(max-width:760px){.dwg2,.tiers{grid-template-columns:minmax(0,1fr)}.gantt{grid-template-columns:120px repeat(10,minmax(0,1fr));font-size:12.5px}}
 </style>
 </head>
 <body>
-<nav><div class="wrap"><b>บ้านราชบุรี</b><a href="#gallery">ภาพ</a><a href="#video">วิดีโอ</a><a href="#plans">ผังบ้าน</a><a href="#interior">ตกแต่งภายใน</a><a href="#specs">วัสดุ</a><a href="#changes">การแก้แบบ</a><a class="btn pri" href="studio.html">เปิดโมเดล 3D</a></div></nav>
+<nav><div class="wrap"><b>บ้านราชบุรี</b><a href="#gallery">ภาพ</a><a href="#video">วิดีโอ</a><a href="#plans">ผังบ้าน</a><a href="#interior">ตกแต่งภายใน</a><a href="#specs">วัสดุ</a><a href="#drawings">แบบ 2D</a><a href="#budget">งบ & แผนงาน</a><a href="#changes">การแก้แบบ</a><a class="btn pri" href="studio.html">เปิดโมเดล 3D</a></div></nav>
 
 <header class="hero">
   <img src="img/01_exterior_day.jpg" alt="ภาพจำลองภายนอกบ้านราชบุรี ตอนกลางวัน">
@@ -213,6 +224,46 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-betw
   </div>
 </div></section>
 
+
+<section class="band" id="drawings"><div class="wrap">
+  <h2>รูปด้าน ผังไฟฟ้า และผังบริเวณ จากโมเดลเดียวกัน</h2>
+  <p class="lead">ภาพประกอบการนำเสนอและคุยกับช่าง ตำแหน่งจริงของระบบไฟฟ้า ท่อ และขอบเขตที่ดิน ให้วิศวกรและผังสำรวจเป็นผู้กำหนด</p>
+  <div class="tabs" role="tablist" id="dwt"><button role="tab" aria-selected="true" data-d="el">รูปด้าน 4 ทิศ</button><button role="tab" aria-selected="false" data-d="ec">ผังไฟฟ้า</button><button role="tab" aria-selected="false" data-d="st">ผังบริเวณ</button></div>
+  <div class="dw" data-p="el"><div class="dwg2">
+    <figure><img loading="lazy" src="img/elev_right.jpg" alt="รูปด้านหน้า ฝั่งลานจอดรถ"><figcaption>ด้านหน้า (ฝั่งทางรถเข้า)</figcaption></figure>
+    <figure><img loading="lazy" src="img/elev_front.jpg" alt="รูปด้านเฉลียง"><figcaption>ด้านเฉลียงและลานคอนกรีตพิมพ์ลาย</figcaption></figure>
+    <figure><img loading="lazy" src="img/elev_left.jpg" alt="รูปด้านหลัง"><figcaption>ด้านหลัง</figcaption></figure>
+    <figure><img loading="lazy" src="img/elev_back.jpg" alt="รูปด้านข้าง"><figcaption>ด้านข้าง (ฝั่งครัว)</figcaption></figure>
+  </div></div>
+  <div class="dw" data-p="ec" hidden><div class="dwg2">
+    <figure><img loading="lazy" src="img/dwg/elec_1.svg" alt="ผังไฟฟ้าชั้น 1"><figcaption>ชั้น 1 · ดาวน์ไลท์ 30 · เต้ารับ 27 · แอร์ 2 · LAN 3</figcaption></figure>
+    <figure><img loading="lazy" src="img/dwg/elec_2.svg" alt="ผังไฟฟ้าชั้น 2"><figcaption>ชั้น 2 · ดาวน์ไลท์ 15 · เต้ารับ 20 · แอร์ 3 · LAN 5</figcaption></figure>
+  </div><p class="note">เต้ารับทุกจุดเป็นชนิดมีม่านนิรภัยกันเด็ก วงจรเต้ารับและห้องน้ำต่อผ่านเบรกเกอร์กันดูด</p></div>
+  <div class="dw" data-p="st" hidden><img loading="lazy" src="img/dwg/site.svg" alt="ผังบริเวณและงานภูมิทัศน์"><p class="note">ลานคอนกรีตพิมพ์ลายราว 94 ตร.ม. + ทางรถเข้า 62 ตร.ม. · ที่จอดรถ 2 คัน · รางระบายน้ำรอบบ้านพร้อมบ่อพัก · ถังเก็บน้ำและถังบำบัด · ไม้ยืนต้นให้ร่มเงาตามแนวรั้ว</p></div>
+</div></section>
+
+<section class="band" id="sun" style="background:var(--soft)"><div class="wrap">
+  <h2>แดดบ่ายตกด้านไหน เลื่อนดูได้ทั้งวัน</h2>
+  <p class="lead">เงาจากโมเดลช่วงเวลา 08:00–16:00 ใช้ตัดสินใจเรื่องชายคา ม่าน และตำแหน่งต้นไม้ ทิศในโมเดลเป็นค่าสมมติ ต้องตรวจกับทิศจริงของที่ดินก่อน</p>
+  <img id="sunimg" src="img/sun_12.jpg" alt="เงาของบ้านเวลา 12:00" style="border-radius:6px;margin-top:18px">
+  <input class="sunr" id="sunr" type="range" min="0" max="4" value="2" aria-label="เวลา"><div class="sunc" id="sunc">12:00 น.</div>
+</div></section>
+
+<section class="band" id="budget"><div class="wrap">
+  <h2>งบประมาณ 3 ระดับ สร้างเสร็จในราว 10 เดือน</h2>
+  <p class="lead">ราคารวมงานตกแต่งภายใน ค่าดำเนินการ 12% ค่าเผื่อ 5% และ VAT 7% แล้ว อ้างอิงราคา พ.ย. 2569 จาก BOQ ฉบับเต็ม</p>
+  <div class="tiers">
+    <div><span>Standard</span><b>≈ 4.01 ล้าน</b><p>≈ 19,900 บาท/ตร.ม. · กระเบื้อง 60×60 ทั้งบ้าน ผนังทาสี ไม่มีผนังหินและไม้ตกแต่ง</p></div>
+    <div><span>Premium</span><b>≈ 4.90 ล้าน</b><p>≈ 24,300 บาท/ตร.ม. · พื้น 60×120 ชั้นล่าง ผนังไม้เฉพาะหัวเตียง สุขภัณฑ์รุ่นกลาง</p></div>
+    <div class="on"><span>Luxury · ตามโมเดล</span><b>≈ 5.76 ล้าน</b><p>≈ 28,500 บาท/ตร.ม. · ตัวบ้าน ≈ 4.78 ล้าน + ตกแต่งภายในและเฟอร์นิเจอร์ ≈ 0.98 ล้าน</p></div>
+  </div>
+  <h3 style="margin-top:34px">แผนงานก่อสร้าง</h3>
+  <div class="gantt" id="gantt"></div>
+  <h3 style="margin-top:34px">งวดการจ่ายเงิน (สัญญาตัวบ้าน ≈ 4.78 ล้าน)</h3>
+  <div class="scroll"><table><thead><tr><th>งวด</th><th>เนื้องานที่ต้องเสร็จ</th><th class="n">สัดส่วน</th><th class="n">≈ บาท</th></tr></thead><tbody id="pay"></tbody></table></div>
+  <p class="note">ตัวเลขเป็นราคาประมาณการก่อนถอดแบบก่อสร้างจริง ปริมาณงานโครงสร้างและเสาเข็มต้องตรวจกับแบบวิศวกรรม และยืนยันราคากับผู้รับเหมาไม่เกิน 30–60 วันก่อนเซ็นสัญญา</p>
+</div></section>
+
 <section class="band" id="changes"><div class="wrap">
   <h2>ด้านหน้าห้องรับแขกปรับใหม่ เปิดรับเฉลียงเต็มแนว</h2>
   <div class="chg">
@@ -277,6 +328,17 @@ tb.addEventListener('click',e=>{const t=e.target.closest('tr');if(t)hi(t.dataset
 tb.addEventListener('mouseover',e=>{const t=e.target.closest('tr');if(t)hi(t.dataset.n);});
 plan(1);
 }
+</script>
+
+<script>
+(()=>{const T=document.getElementById('dwt');T.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;T.querySelectorAll('button').forEach(x=>x.setAttribute('aria-selected',x===b));document.querySelectorAll('#drawings .dw').forEach(p=>p.hidden=p.dataset.p!==b.dataset.d);});
+const H=['08','10','12','14','16'],r=document.getElementById('sunr'),im=document.getElementById('sunimg'),c=document.getElementById('sunc');H.forEach(h=>{const i=new Image();i.src='img/sun_'+h+'.jpg';});
+r.oninput=()=>{const h=H[r.value];im.src='img/sun_'+h+'.jpg';im.alt='เงาของบ้านเวลา '+h+':00';c.textContent=h+':00 น.';};
+const P=[['เตรียมพื้นที่ เสาเข็มเจาะ',1,1],['ฐานราก คานคอดิน พื้นชั้น 1',2,1],['โครงสร้างชั้น 2 บันได',2,3],['โครงหลังคา กันซึม',4,1],['ก่อ ฉาบ เดินท่อระบบ',4,2],['ฝ้า ประตูหน้าต่าง',6,2],['พื้น ผนังตกแต่ง สุขภัณฑ์',6,3],['สี ดวงโคม เต้ารับ',8,2],['งานภายนอก ลานพิมพ์ลาย สวน',8,2],['บิวท์อิน ทำความสะอาด ส่งมอบ',9,2]];
+let g='<span></span>'+[...Array(10)].map((_,i)=>'<span class="h">ด.'+(i+1)+'</span>').join('');
+P.forEach(([n,a,d])=>{g+='<span>'+n+'</span>';for(let m=1;m<=10;m++)g+=(m>=a&&m<a+d)?'<i></i>':'<span></span>';});document.getElementById('gantt').innerHTML=g;
+const tot=4779642,Y=[['เซ็นสัญญา (มัดจำ)',10],['เสาเข็มเสร็จ',10],['ฐานราก คานคอดิน พื้นชั้น 1',15],['โครงสร้างชั้น 2 และบันได',15],['ก่อฉาบ หลังคา เดินท่อ',15],['ฝ้า ประตูหน้าต่าง',10],['พื้น ผนังตกแต่ง สุขภัณฑ์',10],['สี ไฟฟ้า งานภายนอก',10],['ส่งมอบงาน',5]];
+document.getElementById('pay').innerHTML=Y.map(([n,p],i)=>'<tr><td>'+(i+1)+'</td><td>'+n+'</td><td class="n">'+p+'%</td><td class="n">'+Math.round(tot*p/100/1000).toLocaleString('th-TH')+',000</td></tr>').join('');})();
 </script>
 </body>
 </html>
