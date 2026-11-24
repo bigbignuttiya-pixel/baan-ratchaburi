@@ -91,14 +91,14 @@ if(VIDEO)document.body.classList.add('video');
 const ZONES=[
  {id:0,n:'ภายนอกบ้าน',lv:0},
  {id:1,n:'ห้องรับแขก',lv:1,r:[[6.5,0,16,4.5,.6,3.9]],cam:[15.0,3.6,-1.93]},
- {id:2,n:'ครัว',lv:1,r:[[1,0,6.5,4.5,0,3.0]],cam:[5.2,3.4,-2.25]},
+ {id:2,n:'ครัว',lv:1,r:[[1,0,6.5,4.5,.012,3.0]],cam:[5.2,3.4,-2.25]},
  {id:3,n:'โถง / บันได',lv:1,r:[[3.4,4.5,6.5,6.3,.6,3.6],[0,4.5,3.4,6.3,.6,7.0],[2.6,6.3,6.5,8.5,.6,3.6]],cam:[5.6,7.9,-2.21]},
  {id:4,n:'ห้องน้ำ 3',lv:1,r:[[0,6.3,2.6,8.5,.5,3.6]],cam:[2.2,7.0,-1.23]},
  {id:5,n:'ห้องทานอาหาร',lv:1,r:[[0,8.5,6.5,12,.6,3.6],[0,12,6.5,14.8,.6,7.0]],cam:[5.6,9.0,-0.66]},
  {id:6,n:'เฉลียง',lv:1,r:[[6.5,4.5,16,6.3,.6,3.9]],cam:[15.2,5.4,-1.57]},
- {id:7,n:'ห้องนอน 3',lv:2,r:[[1,0,3.5,4.5,3.3,7.0]],cam:[3.0,3.9,-2.58]},
- {id:8,n:'ห้องนอน 2',lv:2,r:[[3.5,0,6.5,3.0,3.3,7.0]],cam:[6.0,2.7,-2.54]},
- {id:9,n:'ห้องนอน 1',lv:2,r:[[2.1,8.5,6.5,10.1,3.9,7.0],[0,10.1,6.5,12,3.9,7.0]],cam:[5.9,8.9,-0.84]},
+ {id:7,n:'ห้องเด็ก (นอน 3)',lv:2,r:[[1,0,3.5,4.5,3.3,7.0]],cam:[3.0,3.9,-2.58]},
+ {id:8,n:'ห้องทำงาน (นอน 2)',lv:2,r:[[3.5,0,6.5,3.0,3.3,7.0]],cam:[6.0,2.7,-2.54]},
+ {id:9,n:'ห้องนอนใหญ่ (นอน 1)',lv:2,r:[[2.1,8.5,6.5,10.1,3.9,7.0],[0,10.1,6.5,12,3.9,7.0]],cam:[5.9,8.9,-0.84]},
  {id:10,n:'โถงชั้น 2',lv:2,r:[[3.5,3.0,6.5,4.5,3.3,7.0],[3.4,4.5,6.5,6.3,3.9,7.0],[3.9,6.3,6.5,8.5,3.9,7.0]],cam:[5.2,8.0,3.14]},
  {id:11,n:'ห้องน้ำ 1',lv:2,r:[[0,6.3,2.1,10.1,3.8,7.0]],cam:[1.4,9.7,3.14]},
  {id:12,n:'ห้องน้ำ 2',lv:2,r:[[2.1,6.3,3.9,8.5,3.8,7.0]],cam:[3.5,7.0,-1.57]},
@@ -106,23 +106,23 @@ const ZONES=[
 ];
 const FLOORS=['แกรนิตโต้ 60×60 ขาวด้าน','ลามิเนตลายโอ๊ค 8 มม.','กระเบื้องเซรามิก 30×30','ปูนขัดมัน (ลอฟต์)','หินอ่อนคาร์ราร่า 80×80','ไม้เทียม WPC','SPC ลายวอลนัท','เทอราซโซ่','แกรนิตโต้ 60×120 ลายหินเทา'];
 const WOODS=[['โอ๊คธรรมชาติ','#a8794a'],['วอลนัท','#5b3a24'],['สัก','#8c5a30'],['ไวท์โอ๊ค','#cdb08a'],['ลามิเนตขาวด้าน','#e9e6df'],['เทาเข้ม (HPL)','#4b4b4d']];
-const DEF={1:['#ece6dc',8,'#9a9690'],2:['#f2efe9',0,'#2f3b40'],3:['#efebe4',0,'#7a5a3c'],4:['#d9d6d0',2,'#f4f4f2'],5:['#efe8dd',0,'#8a6a4a'],6:['#f2efe9',5,'#d8cfc2'],
- 7:['#e4ded3',1,'#b9c4c9'],8:['#e6e2da',1,'#c9b9a6'],9:['#e9e2d6',6,'#9aa8a0'],10:['#efebe4',1,'#7a5a3c'],11:['#cfcac2',2,'#f4f4f2'],12:['#cfcac2',2,'#f4f4f2'],13:['#f2efe9',2,'#d8cfc2']};
+const DEF={1:['#e8e2d8',4,'#b8ad9d'],2:['#eeeae3',8,'#2b2d30'],3:['#e8e2d8',4,'#2b2d30'],4:['#d9d4cc',2,'#2b2d30'],5:['#e8e2d8',4,'#3a3633'],6:['#f2efe9',5,'#d8cfc2'],
+ 7:['#e3e8ea',1,'#a9bccb'],8:['#dcd6cc',6,'#4a4f55'],9:['#e4dcd0',6,'#b9aa96'],10:['#e8e2d8',6,'#7a5a3c'],11:['#d9d4cc',2,'#2b2d30'],12:['#d9d4cc',2,'#2b2d30'],13:['#f2efe9',2,'#d8cfc2']};
 const LIGHTS=[[1,8.6,3.85,2.2],[1,12.6,3.85,2.2],[2,3.7,2.95,2.2],[3,4.8,3.55,5.4],[3,1.8,6.95,5.4],[3,4.5,3.55,7.4],[4,1.3,3.55,7.4],[5,3.2,2.85,11.1],[5,3.2,6.95,13.4],[6,9.5,3.85,5.4],[6,13.5,3.85,5.4],
  [7,2.3,6.95,2.2],[8,5,6.95,1.5],[9,4.2,6.95,10.6],[10,5,6.95,5.4],[11,1,6.95,8.2],[12,3,6.95,7.4]];
 
 // ================= state =================
 const S={wall:'#f2efe9',acc:'#3a3c40',wood:'#6b4a2f',stone:'#8f8a82',tod:38,trees:true,slats:true,spin:!VIDEO,Z:{}};
-const DEFW={1:1,2:3,3:1,4:4,5:0,6:2,7:3,8:0,9:0,10:1,11:2,12:2,13:2};
-const DEFF={4:4,11:4,12:4};
+const DEFW={1:1,2:1,3:1,4:1,5:1,6:2,7:3,8:1,9:1,10:1,11:1,12:1,13:2};
+const DEFF={4:4,11:7,12:4};
 for(const z of ZONES)if(z.id)S.Z[z.id]={wall:DEF[z.id][0],floor:DEF[z.id][1],furn:DEF[z.id][2],wood:DEFW[z.id],fin:DEFF[z.id]||0,show:true,light:true};
 const PAL={wall:['#f2efe9','#e9e4da','#d9d4cc','#c7c2b8','#ece3d3','#dfe6e8'],acc:['#3a3c40','#1f2124','#6d6f73','#f2efe9','#8a6a4a'],wood:['#6b4a2f','#8a5f3a','#3e2b1d','#b08257','#2b2b2b'],stone:['#8f8a82','#6e6a64','#a89a86','#5b5853','#b9b2a6'],
  iwall:['#f2efe9','#ece6dc','#e4ded3','#d6d3cd','#c9cdd0','#dfe6e1','#efe1d1','#b8a990','#7d8a86','#5d6266','#2f3438'],
  furn:['#8b8f94','#3d4a4f','#b9c4c9','#c9b9a6','#9aa8a0','#8a6a4a','#d8cfc2','#f4f4f2','#2b2d30','#a65d3f','#4a5d7a']};
-try{const sv=JSON.parse(localStorage.getItem('rb-house6')||'null');if(sv&&!VIDEO){const z=sv.Z;delete sv.Z;Object.assign(S,sv,{spin:true});if(z)for(const k in z)if(S.Z[k])Object.assign(S.Z[k],z[k]);}}catch(e){}
+try{const sv=JSON.parse(localStorage.getItem('rb-house7')||'null');if(sv&&!VIDEO){const z=sv.Z;delete sv.Z;Object.assign(S,sv,{spin:true});if(z)for(const k in z)if(S.Z[k])Object.assign(S.Z[k],z[k]);}}catch(e){}
 for(const k of ['wall','acc','wood','stone'])if(Q.get(k))S[k]='#'+Q.get(k);
 if(Q.get('tod'))S.tod=+Q.get('tod');
-const save=()=>{try{localStorage.setItem('rb-house6',JSON.stringify(S));}catch(e){}};
+const save=()=>{try{localStorage.setItem('rb-house7',JSON.stringify(S));}catch(e){}};
 
 // ================= GL =================
 const cv=document.getElementById('c');
@@ -130,7 +130,7 @@ const gl=cv.getContext('webgl2',{antialias:false,preserveDrawingBuffer:VIDEO,alp
 if(!gl){document.body.innerHTML='<p style="padding:20px">อุปกรณ์นี้ไม่รองรับ WebGL2 — ดูวิดีโอแทนได้ที่ <a href="house_360.mp4" style="color:#e8b86a">วิดีโอ 360°</a></p>';throw 0;}
 
 // ================= geometry =================
-const M={blackm:26,screen:27,steel:28,rattan:29,shade:30,down:31,pillow:32,pot:33,wall:0,stone:1,wood:2,glass:3,frame:4,conc:5,grass:6,pave:7,deck:8,acc:9,leaf:10,trunk:11,roof:12,soff:13,floor:14,ceil:15,furn:16,woodf:17,linen:18,dark:19,metal:20,white:21,top:22,lamp:23,rug:24,mirror:25};
+const M={brass:34,blackm:26,screen:27,steel:28,rattan:29,shade:30,down:31,pillow:32,pot:33,wall:0,stone:1,wood:2,glass:3,frame:4,conc:5,grass:6,pave:7,deck:8,acc:9,leaf:10,trunk:11,roof:12,soff:13,floor:14,ceil:15,furn:16,woodf:17,linen:18,dark:19,metal:20,white:21,top:22,lamp:23,rug:24,mirror:25};
 let G,COL,SURF,SCOL=[],DCOL=[];
 function Geo(){this.a=[];this.g=[];}
 Geo.prototype.quad=function(p0,p1,p2,p3,n,m,z){const a=m===M.glass?this.g:this.a;for(const p of [p0,p1,p2,p0,p2,p3])a.push(p[0],p[1],p[2],n[0],n[1],n[2],m,z);};
@@ -168,6 +168,7 @@ Geo.prototype.cyl=function(cx,y0,cz,r,y1,m,zn,col){const N=16,a=this.a;for(let i
 // ops: {a0,a1,y0,y1,k:'win'|'slide'|'open',p:panes,tr:transom}
 let OPN=0,OPS={},OPICK=[],WN=0,WALLS={},WPICK=[],WALLREG=false;
 const FINS=['สีทาเรียบ','หินตกแต่ง','อิฐโชว์','ผนังไม้','กระเบื้อง 30×60','ปูนเปลือย','วอลเปเปอร์','หินอ่อน'];
+function featureFin(axis,c,a0,z){z=z%100;if(z===1&&axis==='x'&&Math.abs(c-6.4)<.01)return 7;if(z===9&&axis==='z'&&Math.abs(c-12)<.01)return 3;if(z===5&&axis==='x'&&Math.abs(c-.1)<.01&&a0>=8.5)return 3;return null;}
 function zoneFin(z){z=z%100;return z===0?(S.extFin||0):((S.Z[z]&&S.Z[z].fin)||0);}
 function wall(axis,c,a0,a1,y0,y1,t,zn,zp,ops){
   const wid=WALLREG?WN++:null;
@@ -175,7 +176,7 @@ function wall(axis,c,a0,a1,y0,y1,t,zn,zp,ops){
     WPICK.push({kind:'wl',id:wid,lv:y1<=4?1:(y0>=3.1?2:0),box:axis==='x'?[c-t/2-.04,y0,a0,c+t/2+.04,y1,a1]:[a0,y0,c-t/2-.04,a1,y1,c+t/2+.04]});
     ops=(ops||[]).filter(o=>!(S.opdel&&S.opdel[o.id]));for(const ad of (S.opadd||[]))if(ad.wid===wid)ops.push(Object.assign({},ad));}
   const wsel=wid!==null&&SELI&&SELI.kind==='wl'&&SELI.id===wid?100:0;
-  const mN=40+((wid!==null&&S.wf&&S.wf[wid+'n']!=null)?S.wf[wid+'n']:zoneFin(zn)),mP=40+((wid!==null&&S.wf&&S.wf[wid+'p']!=null)?S.wf[wid+'p']:zoneFin(zp));
+  const fz=z=>{const ff=wid!==null?featureFin(axis,c,a0,z):null;return ff!=null?ff:zoneFin(z);};const mN=40+((wid!==null&&S.wf&&S.wf[wid+'n']!=null)?S.wf[wid+'n']:fz(zn)),mP=40+((wid!==null&&S.wf&&S.wf[wid+'p']!=null)?S.wf[wid+'p']:fz(zp));
   ops=(ops||[]).map(o=>{if(o.id===undefined)return Object.assign({},o);OPS[o.id]={id:o.id,axis,c,a0,a1,y0,y1,zn,zp,orig:o};return Object.assign({},o,(S.ops&&S.ops[o.id])||{});}).sort((p,q)=>p.a0-q.a0);
   {let prev=a0+0.05;for(const o of ops){const w=Math.max(.3,o.a1-o.a0);o.a0=Math.max(o.a0,prev);o.a1=Math.min(o.a0+w,a1-.05);o.y0=Math.max(o.y0,y0);o.y1=Math.min(o.y1,y1-.05);if(o.y1-o.y0<.3)o.y0=o.y1-.3;prev=o.a1+.08;}
    ops=ops.filter(o=>o.a1-o.a0>=.25);}
@@ -263,7 +264,7 @@ function buildHouse(){
   // ---------- stair ST-1 (two flights + landing) ----------
   for(let i=0;i<11;i++){box(3.4-0.2*(i+1),0.6,4.55,3.4-0.2*i,0.6+0.15*(i+1),5.4,M.woodf,3,true);}
   box(.2,0.6,4.55,1.2,2.25,6.25,M.woodf,3,true);surf(.2,4.55,1.2,6.25,2.25);
-  for(let i=0;i<11;i++){const ty=2.25+0.15*(i+1);box(1.2+0.2*i,ty-0.06,5.45,1.2+0.2*(i+1),ty,6.25,M.woodf,3);COL.push([1.2+0.2*i,ty-0.35,5.45,1.2+0.2*(i+1),ty,6.25]);}
+  for(let i=0;i<11;i++){const ty=2.25+0.15*(i+1);box(1.2+0.2*i,ty-0.06,5.45,1.2+0.2*(i+1),ty,6.25,M.woodf,3);box(1.2+0.2*i,ty-0.21,5.47,1.2+0.2*i+0.018,ty-0.06,6.23,M.woodf,3);COL.push([1.2+0.2*i,ty-0.35,5.45,1.2+0.2*(i+1),ty,6.25]);}
   {const a=[1.2,2.1],b=[3.4,3.75];for(const zz of [5.45,6.19]){const n=12;for(let k=0;k<n;k++){const x0=a[0]+(b[0]-a[0])*k/n,x1=a[0]+(b[0]-a[0])*(k+1)/n,y0=a[1]+(b[1]-a[1])*k/n;box(x0,y0,zz,x1,y0+0.22,zz+0.06,M.frame);}}}
   surf(1.2,4.55,3.4,5.4,0,{x0:3.4,y0:.6,x1:1.2,y1:2.25});surf(1.2,5.45,3.4,6.25,0,{x0:1.2,y0:2.25,x1:3.4,y1:3.9});
   box(3.38,3.9,4.5,3.42,4.9,5.42,M.glass,0,true);box(3.36,4.9,4.5,3.44,4.95,5.42,M.frame);   // railing at stairwell
@@ -329,10 +330,10 @@ const CAT={
  rug:{n:'พรม 200×300',g:'นั่งเล่น',f(b){b(-1,0,-1.5,1,.012,1.5,M.rug,.005);}},
  plant:{n:'ต้นไม้กระถาง (ไทรใบสัก)',g:'ของตกแต่ง',f(b,c){b(-.19,0,-.19,.19,.42,.19,M.pot,.07);c(0,.4,0,.02,1.0,M.trunk);c.blob(0,1.15,0,.32,.38);c.blob(.15,1.4,.05,.26,.3);c.blob(-.12,1.5,-.08,.24,.28);c.blob(.02,1.7,.02,.2,.22);}},
  plant2:{n:'ต้นไม้เล็ก (มอนสเตอร่า)',g:'ของตกแต่ง',f(b,c){b(-.15,0,-.15,.15,.3,.15,M.pot,.06);c.blob(0,.55,0,.32,.26);c.blob(.12,.7,.06,.22,.2);}},
- lampf:{n:'โคมไฟตั้งพื้น',g:'ของตกแต่ง',f(b,c){c(0,0,0,.15,.02,M.blackm);c(0,.02,0,.012,1.32,M.blackm);c(0,1.3,0,.2,1.6,M.shade);}},
- pendant:{n:'โคมไฟห้อย LED',g:'ของตกแต่ง',f(b,c,k){b(-.55,2.2,-.05,.55,2.26,.05,M.blackm,.01);b(-.53,2.195,-.035,.53,2.2,.035,M.down);for(const x of[-.4,.4])b(x-.004,2.26,-.004,x+.004,k.ceil,.004,M.blackm);},nocol:1},
+ lampf:{n:'โคมไฟตั้งพื้น',g:'ของตกแต่ง',f(b,c){c(0,0,0,.15,.02,M.brass);c(0,.02,0,.012,1.32,M.brass);c(0,1.3,0,.2,1.6,M.shade);}},
+ pendant:{n:'โคมไฟห้อย LED',g:'ของตกแต่ง',f(b,c,k){b(-.6,2.2,-.05,.6,2.26,.05,M.brass,.01);b(-.58,2.195,-.035,.58,2.2,.035,M.down);for(const x of[-.45,.45])b(x-.004,2.26,-.004,x+.004,k.ceil,.004,M.brass);},nocol:1},
  art:{n:'กรอบรูปติดผนัง',g:'ของตกแต่ง',f(b){b(-.5,1.3,-.03,.5,2.0,0,M.blackm);b(-.47,1.33,-.031,.47,1.97,.001,M.pillow);},nocol:1},
- dining:{n:'ชุดโต๊ะอาหาร 6 ที่ 180×90',g:'ทานอาหาร',f(b){b(-.9,.71,-.45,.9,.75,.45,M.woodf,.01);for(const x of[-.8,.8])b(x-.03,0,-.38,x+.03,.71,.38,M.blackm);b(-.8,.66,-.03,.8,.7,.03,M.blackm);
+ dining:{n:'ชุดโต๊ะอาหาร 6 ที่ 180×90 ท็อปหินอ่อนขอบมน',g:'ทานอาหาร',f(b){b(-.9,.71,-.45,.9,.75,.45,M.top,.06);for(const x of[-.7,.7])b(x-.03,0,-.3,x+.03,.71,.3,M.brass,.01);b(-.7,.64,-.03,.7,.68,.03,M.brass);
    for(const x of[-.6,0,.6])for(const s of[-1,1]){const z=s*.72;b(x-.22,.44,z-.21,x+.22,.5,z+.21,M.furn,.03);b(x-.21,.5,s<0?z-.22:z+.16,x+.21,.88,s<0?z-.16:z+.22,M.furn,.03);
      for(const[dx,dz]of[[-.18,-.18],[.18,-.18],[-.18,.18],[.18,.18]])b(x+dx-.015,0,z+dz-.015,x+dx+.015,.44,z+dz+.015,M.woodf);}}},
  dining4:{n:'ชุดโต๊ะอาหาร 4 ที่ 120×80',g:'ทานอาหาร',f(b){b(-.6,.71,-.4,.6,.75,.4,M.woodf,.01);legs(b,.54,.34,.71,M.woodf,.025);
@@ -360,17 +361,33 @@ const CAT={
  tub:{n:'อ่างอาบน้ำแบบตั้งพื้น',g:'ห้องน้ำ',f(b){b(-.8,0,-.38,.8,.58,.38,M.white,.18);b(-.68,.4,-.27,.68,.582,.27,M.top,.12);}},
  shower:{n:'ฉากกั้นอาบน้ำ + เรนชาวเวอร์',g:'ห้องน้ำ',f(b,c){b(-.45,0,-.6,.45,.02,.6,M.white);b(-.45,0,.58,.45,2.0,.6,M.glass);b(-.45,1.97,.575,.45,2.0,.605,M.blackm);b(.44,0,.575,.47,2.0,.605,M.blackm);
    c(0,2.0,-.3,.12,2.02,M.blackm);b(-.01,2.02,-.6,.01,2.04,-.3,M.blackm);}},
+ coffeeR:{n:'โต๊ะกลางหินอ่อนขอบมน Ø100',g:'นั่งเล่น',f(b,c){c(0,0,0,.3,.02,M.brass);c(0,.02,0,.16,.3,M.brass);c(0,.3,0,.5,.37,M.top);}},
+ sideR:{n:'โต๊ะข้างหินอ่อน Ø45',g:'นั่งเล่น',f(b,c){c(0,0,0,.16,.02,M.brass);c(0,.02,0,.025,.5,M.brass);c(0,.5,0,.225,.53,M.top);}},
+ gate:{n:'ประตูกั้นบันได (กันเด็ก/สัตว์เลี้ยง)',g:'ความปลอดภัย',nocol:1,f(b){b(-.43,0,-.03,-.39,.8,.03,M.blackm);b(.39,0,-.03,.43,.8,.03,M.blackm);b(-.43,.76,-.02,.43,.8,.02,M.blackm);b(-.43,.04,-.02,.43,.08,.02,M.blackm);for(let x=-.33;x<.36;x+=.065)b(x-.008,.08,-.008,x+.008,.76,.008,M.blackm);}},
+ rugR:{n:'พรมกลม Ø160',g:'ห้องเด็ก',f(b,c){c(0,0,0,.8,.012,M.rug);}},
+ toybox:{n:'ชั้นเก็บของเล่นขอบมน',g:'ห้องเด็ก',f(b){b(-.6,0,-.2,.6,.62,.2,M.woodf,.03);for(const x of[-.2,.2])b(x-.004,.04,.2,x+.004,.58,.203,M.blackm);b(-.5,.62,-.12,-.22,.82,.1,M.pillow,.06);b(.15,.62,-.1,.45,.74,.1,M.furn,.05);}},
+ kidtable:{n:'โต๊ะเด็กกลม + เก้าอี้',g:'ห้องเด็ก',f(b,c){c(0,0,0,.04,.46,M.woodf);c(0,.46,0,.36,.5,M.woodf);for(const x of[-.55,.55])c(x,0,0,.15,.28,M.furn);}},
+ deskL:{n:'โต๊ะทำงาน 160×70 + เก้าอี้ Ergonomic',g:'ห้องทำงาน',f(b){b(-.8,.72,-.35,.8,.76,.35,M.woodf,.01);b(-.78,0,-.32,-.74,.72,.32,M.brass);b(.74,0,-.32,.78,.72,.32,M.brass);b(.3,.45,-.33,.72,.72,.15,M.woodf);
+   b(-.36,.86,-.3,.36,1.27,-.27,M.screen,.005);b(-.03,.76,-.27,.03,.88,-.22,M.blackm);b(-.2,.76,-.05,.2,.77,.08,M.blackm);
+   b(-.26,.47,.3,.26,.55,.8,M.furn,.04);b(-.25,.6,.74,.25,1.25,.82,M.furn,.05);b(-.02,.06,.53,.02,.47,.57,M.blackm);b(-.3,0,.25,.3,.06,.85,M.blackm);}},
+ shelf:{n:'ชั้นหนังสือวอลนัท 160×35×200',g:'ห้องทำงาน',f(b){b(-.8,0,-.17,-.77,2,.17,M.woodf);b(.77,0,-.17,.8,2,.17,M.woodf);b(-.8,0,-.17,.8,2,-.14,M.woodf);b(-.8,1.97,-.17,.8,2,.17,M.woodf);
+   for(let y=0;y<1.9;y+=.4){b(-.77,y,-.14,.77,y+.025,.17,M.brass);for(let i=0;i<9;i++){const x=-.7+i*.16+((y*10)%3)*.01,h=.2+((i*37+y*50)%7)*.02;if((i+y*7)%5<1)continue;b(x,y+.025,-.1,x+.05,y+.025+h,.12,(i+Math.round(y*5))%3?M.pillow:M.furn);}}}},
+ dresser:{n:'โต๊ะเครื่องแป้ง + กระจก',g:'ห้องนอน',f(b,c){b(-.6,.15,-.22,.6,.76,.22,M.woodf,.01);legs(b,.55,.17,.15,M.brass,.015);b(-.32,.95,-.22,.32,1.65,-.2,M.mirror,.01);b(-.34,.93,-.225,.34,1.67,-.215,M.brass);c(0,0,.45,.2,.45,M.furn);}},
+ petbed:{n:'ที่นอนสัตว์เลี้ยง',g:'สัตว์เลี้ยง',f(b){b(-.4,0,-.3,.4,.2,.3,M.furn,.08);b(-.32,.06,-.22,.32,.16,.22,M.linen,.05);}},
+ petfeed:{n:'มุมให้อาหารสัตว์เลี้ยง',g:'สัตว์เลี้ยง',f(b,c){b(-.35,0,-.18,.35,.12,.18,M.woodf,.02);c(-.15,.12,0,.1,.17,M.steel);c(.15,.12,0,.1,.17,M.steel);}},
  lounge:{n:'เก้าอี้สนามหวาย',g:'ภายนอก',f(b){b(-.38,0,-.38,.38,.36,.38,M.rattan,.04);b(-.38,0,-.38,.38,.78,-.24,M.rattan,.04);b(-.33,.36,-.25,.33,.46,.34,M.linen,.04);b(-.33,.46,-.3,.33,.74,-.2,M.linen,.05);}},
 };
 const ITEMS0=[
- ['sofa',11.4,2.05,1,1],['art',15.78,2.1,1,1],['lampf',12.3,.5,0,1],['tv',6.83,1.55,3,1],['coffee',9.7,2.0,0,1],['rug',9.6,2.0,0,1],['arm',8.7,3.6,3,1],['plant',15.4,.6,0,1],['night',13.65,.65,0,1],
- ['counter',2.2,.5,0,1],['counterhob',4.05,.5,0,1],['counter',1.5,2.1,3,1],['wallcab',2.05,.5,0,1],['wallcab',1.5,2.0,3,1],['fridge',5.55,.58,0,1],['island',3.5,2.55,0,1],
- ['shoe',6.12,7.4,1,1],['plant',5.0,4.9,0,1],['toilet',.5,6.7,3,1],['vanity',.45,7.9,3,1],
- ['dining',3.2,11.1,0,1],['art',.22,13.4,3,1],['plant2',.6,9.0,0,1],['pendant',3.2,11.1,0,1],['side',.42,13.45,3,1],['plant',5.7,14.1,0,1],['lampf',.5,9.2,0,1],
+ ['lsofa',11.2,2.0,1,1],['coffeeR',9.25,1.75,0,1],['rug',9.7,2.0,1,1],['tv',6.83,1.7,3,1],['arm',8.0,.62,0,1],['sideR',12.05,.55,0,1],['lampf',12.0,3.9,0,1],
+ ['side',14.1,.3,0,1],['art',15.78,2.1,1,1],['plant',15.4,.6,0,1],['plant2',7.05,3.95,0,1],['petbed',14.7,3.55,0,1],
+ ['counter',2.2,.5,0,1],['counterhob',4.05,.5,0,1],['counter',1.5,2.1,3,1],['wallcab',2.05,.5,0,1],['wallcab',1.5,2.0,3,1],['fridge',5.55,.58,0,1],['island',3.5,2.55,0,1],['petfeed',1.55,3.9,3,1],
+ ['shoe',6.12,7.4,1,1],['plant',5.0,4.9,0,1],['gate',3.55,4.98,1,1],['toilet',.5,6.7,3,1],['vanity',.45,7.9,3,1],
+ ['dining',3.2,11.1,0,1],['pendant',3.2,11.1,0,1],['side',.42,13.45,3,1],['art',.22,13.4,3,1],['plant2',.6,9.0,0,1],['plant',5.7,14.1,0,1],
  ['lounge',8.6,5.7,2,1],['lounge',9.9,5.7,2,1],
- ['bed6',2.35,2.2,3,2],['night',1.55,.6,3,2],['night',1.55,3.8,3,2],['ward',2.78,4.08,2,2],
- ['bed6',5.0,1.33,0,2],['ward',6.0,.95,1,2],['night',3.82,.5,0,2],
- ['bed6',3.4,10.85,2,2],['night',2.1,11.62,2,2],['night',4.7,11.62,2,2],['ward',2.5,9.3,3,2],['desk',5.85,10.6,1,2],['rug',3.4,9.7,1,2],
+ ['gate',3.55,5.85,1,2],
+ ['bed35',2.36,.9,3,2],['night',1.5,1.85,3,2],['toybox',3.25,2.0,1,2],['rugR',2.2,2.95,0,2],['kidtable',2.2,2.95,0,2],['ward',2.78,4.08,2,2],
+ ['deskL',5.0,.5,0,2],['shelf',3.75,1.5,3,2],['sofa2',5.8,2.0,1,2],['plant2',6.05,.4,0,2],
+ ['bed6',3.4,10.85,2,2],['night',2.1,11.62,2,2],['night',4.7,11.62,2,2],['ward',2.5,9.3,3,2],['dresser',5.65,11.7,2,2],['arm',5.7,9.3,1,2],['sideR',5.9,10.05,0,2],['rug',3.4,9.7,1,2],
  ['tub',.6,7.2,3,2],['toilet',1.35,9.6,2,2],['vanity',1.75,7.0,1,2],['shower',.8,8.65,3,2],['toilet',2.5,8.15,2,2],['vanity',3.57,6.85,1,2],['lounge',6.75,11.1,1,2],
 ].map(([t,x,z,r,lv],i)=>({id:i+1,t,x,z,r,lv}));
 if(!S.items)S.items=JSON.parse(JSON.stringify(ITEMS0));
@@ -505,6 +522,7 @@ void main(){
   else if(vM==30){alb=vec3(.95,.92,.86);emis=vec3(1.,.74,.45)*2.2*uZL[vZ];rough=.9;}
   else if(vM==32){vec2 w=uvf*380.;alb=mix(uZC[vZ]*.75,vec3(.78,.56,.30),.55)*(.9+.12*fbm(uvf*16.))*(.93+.07*sin(w.x)*sin(w.y));rough=.95;sheen=.5;}
   else if(vM==33){alb=vec3(.88,.86,.82)*(.92+.08*fbm(uvf*8.));rough=.25;}
+  else if(vM==34){alb=vec3(.80,.64,.38)*(.95+.05*vn(vec2(uvf.x*600.,uvf.y*3.)));metal=1.;rough=.3;}
   else if(vM>=40){int f=vM-40;vec3 wc=uZW[vZ];vec2 q=uvf;
     if(f==0){alb=wc*(0.97+0.05*fbm(q*3.))*(.985+.03*vn(q*120.));rough=.9;}
     else if(f==1){float row=floor(q.y/.1);float u=q.x+h21(vec2(row,3.))*2.;float L=.22+.4*h21(vec2(row,floor(u/.6)));float cell=floor(u/L);float fu=fract(u/L),fv=fract(q.y/.1);

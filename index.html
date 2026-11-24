@@ -101,6 +101,17 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-betw
 #lb p{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:#ddd;margin:0}
 #lb button{position:absolute;top:10px;background:none;border:0;color:#fff;font-size:34px;cursor:pointer;padding:10px 16px}
 #lb .x{right:4px}#lb .pv{left:4px;top:45%}#lb .nx{right:4px;top:45%}
+.pal{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:22px}
+.pal div{border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.pal i{display:block;height:64px}
+.pal span{display:block;padding:7px 9px;font-size:13.5px;line-height:1.35}
+.rooms td:first-child{font-weight:600;white-space:nowrap}
+.scroll{overflow-x:auto}
+.safe{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:24px}
+.safe div{border-top:2px solid var(--wood);padding-top:10px}
+.safe p{margin:4px 0 0;color:var(--mut);font-size:15px}
+@media(max-width:760px){.pal{grid-template-columns:repeat(3,minmax(0,1fr))}.safe{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.rooms thead{display:none}.rooms tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.rooms td{border:0;padding:2px 0}}
 @media(max-width:900px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))}.feat{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){nav a:not(.btn){display:none}.plan,.two,.chg,.vids{grid-template-columns:minmax(0,1fr)}.figs div{border-right:0;border-bottom:1px solid var(--line)}}
 @media(max-width:600px){table{font-size:14px}th,td{padding:7px 4px}.pin{width:22px;height:22px;font-size:12px;line-height:22px}}
@@ -108,7 +119,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-betw
 </style>
 </head>
 <body>
-<nav><div class="wrap"><b>บ้านราชบุรี</b><a href="#gallery">ภาพ</a><a href="#video">วิดีโอ</a><a href="#plans">ผังบ้าน</a><a href="#specs">วัสดุ</a><a href="#changes">การแก้แบบ</a><a class="btn pri" href="studio.html">เปิดโมเดล 3D</a></div></nav>
+<nav><div class="wrap"><b>บ้านราชบุรี</b><a href="#gallery">ภาพ</a><a href="#video">วิดีโอ</a><a href="#plans">ผังบ้าน</a><a href="#interior">ตกแต่งภายใน</a><a href="#specs">วัสดุ</a><a href="#changes">การแก้แบบ</a><a class="btn pri" href="studio.html">เปิดโมเดล 3D</a></div></nav>
 
 <header class="hero">
   <img src="img/01_exterior_day.jpg" alt="ภาพจำลองภายนอกบ้านราชบุรี ตอนกลางวัน">
@@ -151,6 +162,34 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-betw
   </div>
 </div></section>
 
+<section class="band" id="interior"><div class="wrap">
+  <h2>ตกแต่งภายในแบบ Modern Luxury ที่ปลอดภัยสำหรับเด็กและสัตว์เลี้ยง</h2>
+  <p class="lead">โทนเทาเบจอุ่นตัดกับไม้วอลนัท หินอ่อนลายคาร์ราร่า และโลหะทองเหลืองแบบด้าน วางผังตามการใช้งานจริงของครอบครัวที่มีเด็กเล็ก ทำงานที่บ้าน และเลี้ยงสัตว์</p>
+  <div class="pal">
+    <div><i style="background:#e8e2d8"></i><span>ผนังเทาเบจอุ่น</span></div>
+    <div><i style="background:linear-gradient(135deg,#eeece8 40%,#cfccc6 41%,#eeece8 44%)"></i><span>หินอ่อนคาร์ราร่า</span></div>
+    <div><i style="background:#5b3a24"></i><span>ไม้วอลนัท</span></div>
+    <div><i style="background:#c9a462"></i><span>ทองเหลืองด้าน</span></div>
+    <div><i style="background:#b8ad9d"></i><span>ผ้าเทาโอ๊ต (ทนรอยข่วน)</span></div>
+    <div><i style="background:#2b2d30"></i><span>ดำด้าน</span></div>
+  </div>
+  <div class="scroll"><table class="rooms" style="margin-top:26px"><thead><tr><th>ห้อง</th><th>การใช้งาน</th><th>วัสดุและจุดเด่น</th><th>ความปลอดภัย</th></tr></thead><tbody>
+    <tr><td>ห้องรับแขก</td><td>โซฟาตัวแอล 270 ซม. หันเข้าผนังทีวี เปิดออกเฉลียงผ่านประตู 5.50 ม.</td><td>ผนังทีวีหินอ่อน · พื้นกระเบื้องลายหินอ่อน 60×120 · โต๊ะกลางหินอ่อนขาทองเหลือง</td><td>โต๊ะกลมขอบมน · ยึดทีวีและตู้ติดผนัง · ที่นอนสัตว์เลี้ยงริมแดด</td></tr>
+    <tr><td>ครัว</td><td>เคาน์เตอร์ตัวแอล + เกาะกลาง 3 ที่นั่ง</td><td>ตู้ดำด้าน · ท็อปควอตซ์ลายหินอ่อน · ไฟ LED ใต้ตู้แขวน</td><td>เตาแม่เหล็กไฟฟ้า (ไม่มีเปลวไฟ) · มุมให้อาหารสัตว์เลี้ยงนอกทางเดิน</td></tr>
+    <tr><td>ทานอาหาร</td><td>โต๊ะ 6 ที่ ใต้เพดานสูง 2 ชั้น</td><td>ผนังไม้วอลนัทเซาะร่อง · ท็อปหินอ่อนขอบมน · โคมไฟห้อย LED ทองเหลือง</td><td>มุมโต๊ะโค้งรัศมี 6 ซม.</td></tr>
+    <tr><td>โถง / บันได</td><td>ทางขึ้นชั้น 2</td><td>ลูกนอนไม้วอลนัท · ราวกระจก</td><td>ประตูกั้นบันไดบนและล่าง · ปิดช่องลูกตั้งช่วงบน</td></tr>
+    <tr><td>ห้องนอนใหญ่</td><td>เตียง 6 ฟุต · โต๊ะเครื่องแป้ง · มุมนั่งริมระเบียง</td><td>ผนังหัวเตียงไม้วอลนัท · พื้น SPC ลายวอลนัท</td><td>ราวกระจกระเบียงสูง 1.05 ม. ไม่วางเฟอร์นิเจอร์ที่ปีนได้ชิดราว</td></tr>
+    <tr><td>ห้องเด็ก</td><td>เตียง 3.5 ฟุต · โต๊ะเล่นกลม · ชั้นเก็บของเล่น</td><td>ผนังฟ้าเทาอ่อน · พื้นลามิเนตโอ๊ค · พรมกลม</td><td>เฟอร์นิเจอร์ขอบมนทุกชิ้น · ปลั๊กสูง/มีฝาปิด</td></tr>
+    <tr><td>ห้องทำงาน</td><td>โต๊ะ 160 ซม. หันรับแสงจากหน้าต่าง · โซฟาเบดรับแขกค้างคืน</td><td>ชั้นหนังสือวอลนัทคิ้วทองเหลือง · เก้าอี้ Ergonomic</td><td>ห้องอยู่ติดโถง ได้ยินเสียงเด็กแต่แยกเป็นสัดส่วน</td></tr>
+    <tr><td>ห้องน้ำ</td><td>ห้องน้ำใหญ่มีอ่างแช่ตั้งพื้น + ฝักบัวแยก</td><td>ผนังหินอ่อน · อ่างล้างหน้าแขวนผนังไม้วอลนัท</td><td>พื้นกระเบื้องผิวด้านกันลื่น · ฉากกั้นกระจกนิรภัย</td></tr>
+  </tbody></table></div>
+  <div class="safe">
+    <div><h3>เด็กเล็ก</h3><p>ประตูกั้นบันได 2 จุด ลูกตั้งบันไดปิดทึบ มุมเฟอร์นิเจอร์โค้ง ยึดตู้สูงและทีวีกับผนัง</p></div>
+    <div><h3>สัตว์เลี้ยง</h3><p>พื้นกระเบื้องและ SPC ทนรอยข่วน ผ้าโซฟาแบบทนรอยข่วนทำความสะอาดง่าย มีที่นอนและมุมให้อาหารแยกจากทางเดิน</p></div>
+    <div><h3>ทำงานที่บ้าน</h3><p>ห้องทำงานแยกบนชั้น 2 รับแสงธรรมชาติ ชั้นหนังสือเต็มผนัง และโซฟาเบดสำหรับแขก</p></div>
+  </div>
+</div></section>
+
 <section class="band" id="specs" style="background:var(--soft)"><div class="wrap">
   <h2>โครงสร้างตามรายการประกอบแบบ วัสดุตกแต่งตามที่เลือกไว้ในโมเดล</h2>
   <div class="two">
@@ -164,10 +203,10 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-betw
     </tbody></table></div>
     <div><h3>วัสดุตกแต่งในโมเดล</h3><table><tbody>
       <tr><th>ผนังภายนอก</th><td>ฉาบเรียบสีขาวอุ่น · ผนังหินตกแต่งโทนเทา · กรอบอะลูมิเนียมสีดำ</td></tr>
-      <tr><th>ห้องรับแขก</th><td>แกรนิตโต้ 60×120 ลายหินเทา · ผนังสีทา</td></tr>
-      <tr><th>ครัว / ทานอาหาร</th><td>แกรนิตโต้ 60×60 ขาวด้าน · เคาน์เตอร์ท็อปควอตซ์</td></tr>
-      <tr><th>ห้องนอน</th><td>ห้องนอน 1 SPC ลายวอลนัท · ห้องนอน 2–3 ลามิเนตลายโอ๊ค 8 มม.</td></tr>
-      <tr><th>ห้องน้ำ</th><td>กระเบื้องเซรามิก พื้น 30×30 ผนัง 30×60</td></tr>
+      <tr><th>รับแขก / ทานอาหาร / โถง</th><td>กระเบื้องพอร์ซเลนลายหินอ่อน 60×120 · ผนังทีวีหินอ่อน · ผนังไม้วอลนัทเซาะร่อง</td></tr>
+      <tr><th>ครัว</th><td>แกรนิตโต้ 60×120 ลายหินเทา · ตู้ดำด้าน · ท็อปควอตซ์</td></tr>
+      <tr><th>ห้องนอน / ทำงาน</th><td>SPC ลายวอลนัท · ห้องเด็กลามิเนตโอ๊ค 8 มม.</td></tr>
+      <tr><th>ห้องน้ำ</th><td>พื้นกระเบื้อง 30×30 ผิวด้านกันลื่น · ผนังห้องน้ำใหญ่หินอ่อน ห้องอื่นกระเบื้อง 30×60</td></tr>
       <tr><th>เฉลียง</th><td>พื้นไม้ ฝ้าระแนงไม้ ประตูกระจกบานเลื่อน 4 บาน</td></tr>
       <tr><th>ลานหน้าบ้าน</th><td>คอนกรีตพิมพ์ลายหินแผ่นแบบสุ่ม โทนเทา เคลือบกันลื่น มีรอยตัดควบคุมการแตกร้าวทุก 3 ม.</td></tr>
     </tbody></table><p class="note">เปลี่ยนพื้น ผนัง สีเฟอร์นิเจอร์ และผิวไม้ได้ทีละห้องในโมเดล 3D</p></div>
@@ -182,6 +221,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-betw
       <li><b>ย้ายผนังหินไปชิดมุมตัวบ้าน 2 ชั้น</b>เดิมอยู่ระหว่างหน้าต่างกับประตูบานเลื่อน</li>
       <li><b>ประตูกระจกบานเลื่อนกว้าง 5.50 ม. แบ่ง 4 บาน</b>สูง 2.55 ม. เท่าเดิม</li>
       <li><b>ระแนงไม้และหน้าต่างหลังระแนงเปลี่ยนเป็นผนังหิน</b>รวมเป็นผนังหินผืนเดียวกว้าง 3.20 ม.</li>
+      <li><b>ลานหน้าบ้านเป็นคอนกรีตพิมพ์ลายหินแผ่น</b>โทนเทาเข้ากับผนังหิน</li>
     </ol><p class="note">ยืนยันแบบเมื่อ 23 พ.ย. 2569</p></div>
   </div>
 </div></section>
@@ -207,8 +247,8 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-betw
 
 <script>
 {
-const IMGS=[['01_exterior_day','ภายนอก ยามบ่าย'],['02_living','ห้องรับแขก'],['03_kitchen','ครัว'],['04_dining','ห้องทานอาหาร เพดานสูง 2 ชั้น'],['05_master_bedroom','ห้องนอน 1'],['06_exterior_night','ภายนอก ยามค่ำ'],
-  ['07_living_facade','ด้านหน้าห้องรับแขก'],['08_aerial','มุมสูง'],['12_stamped_courtyard','ลานคอนกรีตพิมพ์ลายหน้าบ้าน'],['11_stair_hall','โถงและบันได']];
+const IMGS=[['01_exterior_day','ภายนอก ยามบ่าย'],['02_living','ห้องรับแขก'],['03_kitchen','ครัว'],['04_dining','ห้องทานอาหาร เพดานสูง 2 ชั้น'],['05_master_bedroom','ห้องนอนใหญ่'],['06_exterior_night','ภายนอก ยามค่ำ'],
+  ['07_living_facade','ด้านหน้าห้องรับแขก'],['08_aerial','มุมสูง'],['12_stamped_courtyard','ลานคอนกรีตพิมพ์ลายหน้าบ้าน'],['11_stair_hall','โถงและบันได มีประตูกั้นเด็ก'],['13_kids_room','ห้องเด็ก'],['14_home_office','ห้องทำงาน'],['15_master_bath','ห้องน้ำห้องนอนใหญ่']];
 const ROOMS=[
   {n:1,id:'ห้องรับแขก',lv:1,f:'+0.60',a:42.75,x:59.96,y:21.94},{n:2,id:'ครัว',lv:1,f:'±0.00',a:24.75,x:37.16,y:22.35},{n:3,id:'โถง / บันได',lv:1,f:'+0.60',a:20.28,x:41.5,y:47},
   {n:4,id:'ห้องน้ำ 3',lv:1,f:'+0.50',a:5.72,x:29.52,y:51},{n:5,id:'ห้องทานอาหาร',lv:1,f:'+0.60',a:40.95,x:35.44,y:65.52},{n:6,id:'เฉลียง',lv:1,f:'+0.60',a:17.1,x:59.96,y:39.1,out:1},
