@@ -479,7 +479,7 @@ void main(){
   else if(vM==4){alb=uAcc*.5+.01;rough=.35;metal=.5;}
   else if(vM==5){alb=vec3(.70,.69,.66)*(.85+.2*fbm(uvf*4.));rough=.9;}
   else if(vM==6){float g=fbm(p.xz*.7);float g2=fbm(p.xz*11.);float g3=vn(p.xz*45.);alb=mix(vec3(.07,.13,.035),vec3(.19,.26,.07),g)*(.7+.35*g2)*(.85+.3*g3);ao*=mix(.5,1.,smoothstep(0.,2.2,foot(p.xz)));rough=.95;}
-  else if(vM==7){alb=vec3(.62,.6,.56)*(.9+.15*h21(floor(p.xz/.6)))*(.9+.12*fbm(p.xz*5.));alb*=mix(.55,1.,grid(p.xz,vec2(.6),.01));ao*=mix(.45,1.,smoothstep(0.,1.8,foot(p.xz)));rough=.85;}
+  else if(vM==7){vec2 q=p.xz/.42;vec2 ip=floor(q),fp=fract(q);float d1=8.,d2=8.;vec2 cid=ip;for(int j=-1;j<=1;j++)for(int i=-1;i<=1;i++){vec2 g=vec2(float(i),float(j));vec2 o=vec2(h21(ip+g),h21(ip+g+17.3));vec2 r=g+.1+o*.8-fp;float d=dot(r,r);if(d<d1){d2=d1;d1=d;cid=ip+g;}else if(d<d2)d2=d;}float e=sqrt(d2)-sqrt(d1);float gr=smoothstep(.02,.1,e);float hv=h21(cid*1.7);alb=mix(vec3(.40,.39,.37),vec3(.64,.62,.58),hv)*mix(vec3(1.),vec3(1.04,1.,.93),step(.7,h21(cid*3.1)))*(.82+.3*fbm(p.xz*4.))*(.93+.12*vn(p.xz*45.));alb*=mix(.38,1.,gr);{vec2 cj=abs(fract((p.xz-vec2(6.5,6.3))/3.)-.5)*3.;alb*=mix(.55,1.,smoothstep(.0,.012,min(cj.x,cj.y)));}n=normalize(n+vec3(0.,0.,0.)+(vec3(vn(p.xz*25.),0.,vn(p.xz*25.+5.))-.5)*.15);rough=.72;ao*=mix(.45,1.,smoothstep(0.,1.8,foot(p.xz)));}
   else if(vM==8){float b=fract(p.z/.15);alb=vec3(.40,.26,.16)*(.8+.3*fbm(vec2(p.x*1.5,p.z*40.)))*mix(.45,1.,smoothstep(0.,.06,b));rough=.6;}
   else if(vM==9){alb=uAcc*(.96+.05*fbm(uvf*3.));rough=.8;}
   else if(vM==10){float f=fbm(p.xz*2.5+p.y*3.);alb=mix(vec3(.06,.14,.035),vec3(.20,.33,.08),f);n=normalize(n+(vec3(vn(p.xy*5.),vn(p.yz*5.),vn(p.zx*5.))-.5)*1.1);ao*=.45+.55*f;rough=.7;sheen=.3;}
