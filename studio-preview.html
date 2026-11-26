@@ -119,10 +119,10 @@ for(const z of ZONES)if(z.id)S.Z[z.id]={wall:DEF[z.id][0],floor:DEF[z.id][1],fur
 const PAL={wall:['#f2efe9','#e9e4da','#d9d4cc','#c7c2b8','#ece3d3','#dfe6e8'],acc:['#3a3c40','#1f2124','#6d6f73','#f2efe9','#8a6a4a'],wood:['#6b4a2f','#8a5f3a','#3e2b1d','#b08257','#2b2b2b'],stone:['#8f8a82','#6e6a64','#a89a86','#5b5853','#b9b2a6'],
  iwall:['#f2efe9','#ece6dc','#e4ded3','#d6d3cd','#c9cdd0','#dfe6e1','#efe1d1','#b8a990','#7d8a86','#5d6266','#2f3438'],
  furn:['#8b8f94','#3d4a4f','#b9c4c9','#c9b9a6','#9aa8a0','#8a6a4a','#d8cfc2','#f4f4f2','#2b2d30','#a65d3f','#4a5d7a']};
-try{const sv=JSON.parse(localStorage.getItem('rb-house-bar-preview')||'null');if(sv&&!VIDEO){const z=sv.Z;delete sv.Z;Object.assign(S,sv,{spin:true});if(z)for(const k in z)if(S.Z[k])Object.assign(S.Z[k],z[k]);}}catch(e){}
+try{const sv=JSON.parse(localStorage.getItem('rb-house-bar-preview2')||'null');if(sv&&!VIDEO){const z=sv.Z;delete sv.Z;Object.assign(S,sv,{spin:true});if(z)for(const k in z)if(S.Z[k])Object.assign(S.Z[k],z[k]);}}catch(e){}
 for(const k of ['wall','acc','wood','stone'])if(Q.get(k))S[k]='#'+Q.get(k);
 if(Q.get('tod'))S.tod=+Q.get('tod');
-const save=()=>{try{localStorage.setItem('rb-house-bar-preview',JSON.stringify(S));}catch(e){}};
+const save=()=>{try{localStorage.setItem('rb-house-bar-preview2',JSON.stringify(S));}catch(e){}};
 
 // ================= GL =================
 const cv=document.getElementById('c');
@@ -168,7 +168,7 @@ Geo.prototype.cyl=function(cx,y0,cz,r,y1,m,zn,col){const N=16,a=this.a;for(let i
 // ops: {a0,a1,y0,y1,k:'win'|'slide'|'open',p:panes,tr:transom}
 let OPN=0,OPS={},OPICK=[],WN=0,WALLS={},WPICK=[],WALLREG=false;
 const FINS=['สีทาเรียบ','หินตกแต่ง','อิฐโชว์','ผนังไม้','กระเบื้อง 30×60','ปูนเปลือย','วอลเปเปอร์','หินอ่อน'];
-function featureFin(axis,c,a0,z){z=z%100;if(z===1&&axis==='x'&&Math.abs(c-15.9)<.01)return 7;if(z===9&&axis==='z'&&Math.abs(c-12)<.01)return 3;if(z===5&&axis==='x'&&Math.abs(c-.1)<.01&&a0>=8.5)return 3;return null;}
+function featureFin(axis,c,a0,z){z=z%100;if(z===1&&axis==='x'&&Math.abs(c-9.6)<.01)return 7;if(z===9&&axis==='z'&&Math.abs(c-12)<.01)return 3;if(z===5&&axis==='x'&&Math.abs(c-.1)<.01&&a0>=8.5)return 3;return null;}
 function zoneFin(z){z=z%100;return z===0?(S.extFin||0):((S.Z[z]&&S.Z[z].fin)||0);}
 function wall(axis,c,a0,a1,y0,y1,t,zn,zp,ops){
   const wid=WALLREG?WN++:null;
@@ -246,7 +246,7 @@ function buildHouse(){
   wall('x',6.4,8.5,14.8,0,3.75,T,5,0,[W(8.75,11.75,.6,3.4,'slide',4),W(12.4,14.5,.6,3.4,'slide',3)]);
   wall('x',6.4,8.5,12,3.75,7,T,9,0,[W(8.7,11.8,3.95,6.4,'slide',4)]);
   wall('x',6.4,12,14.8,3.75,7,T,5,0,[W(12.2,14.6,4.0,6.6,'win',3)]);
-  wall('x',15.9,0,4.5,0,3.9,T,1,0);
+  wall('x',15.9,0,4.5,0,3.9,T,1,0);wall('x',9.6,.1,2.9,0,3.9,.12,1,1);
   wall('z',4.4,6.5,16,0,3.9,T,1,0,[W(10.2,15.7,.65,3.2,'slide',4,.5)]);
   // ---------- interior walls (t = 0.12) ----------
   const t=.12;
@@ -401,8 +401,8 @@ const CAT={
  lounge:{n:'เก้าอี้สนามหวาย',g:'ภายนอก',f(b){b(-.38,0,-.38,.38,.36,.38,M.rattan,.04);b(-.38,0,-.38,.38,.78,-.24,M.rattan,.04);b(-.33,.36,-.25,.33,.46,.34,M.linen,.04);b(-.33,.46,-.3,.33,.74,-.2,M.linen,.05);}},
 };
 const ITEMS0=[
- ['lsofa',11.2,2.0,3,1],['coffeeR',13.15,2.25,0,1],['rug',12.7,2.0,1,1],['tv',15.55,2.1,1,1],['barback',6.73,1.4,3,1],['barcounter',8.25,1.4,3,1],['barrack',8.25,1.4,3,1],['barstool',8.95,.7,1,1],['barstool',8.95,1.4,1,1],['barstool',8.95,2.1,1,1],['sideR',10.35,.55,0,1],['lampf',10.4,3.9,0,1],
- ['side',14.1,.3,0,1],['plant2',15.4,3.6,0,1],['plant',15.4,.6,0,1],['plant2',7.05,3.95,0,1],['petbed',14.7,3.55,0,1],
+ ['lsofa',13.4,2.0,1,1],['coffeeR',11.55,1.75,0,1],['rug',12.0,2.0,1,1],['tv',9.87,1.5,3,1],['barback',6.73,1.4,3,1],['barcounter',8.05,1.4,3,1],['barrack',8.05,1.4,3,1],['barstool',8.75,.7,1,1],['barstool',8.75,1.4,1,1],['barstool',8.75,2.1,1,1],['sideR',14.35,.55,0,1],['lampf',12.35,.35,0,1],
+ ['art',15.78,2.1,1,1],['plant',15.4,.6,0,1],['plant2',7.05,3.95,0,1],['petbed',15.25,3.6,0,1],
  ['counter',2.2,.5,0,1],['counterhob',4.05,.5,0,1],['counter',1.5,2.1,3,1],['wallcab',2.05,.5,0,1],['wallcab',1.5,2.0,3,1],['fridge',5.55,.58,0,1],['island',3.5,2.55,0,1],['petfeed',2.6,4.2,2,1],
  ['shoe',6.12,7.4,1,1],['plant',5.0,4.9,0,1],['gate',3.55,4.98,1,1],['toilet',.5,6.7,3,1],['vanity',.45,7.9,3,1],
  ['dining',3.2,11.1,0,1],['pendant',3.2,11.1,0,1],['side',.42,13.45,3,1],['art',.22,13.4,3,1],['plant2',.6,9.0,0,1],['plant',5.7,14.1,0,1],
