@@ -168,7 +168,7 @@ Geo.prototype.cyl=function(cx,y0,cz,r,y1,m,zn,col){const N=16,a=this.a;for(let i
 // ops: {a0,a1,y0,y1,k:'win'|'slide'|'open',p:panes,tr:transom}
 let OPN=0,OPS={},OPICK=[],WN=0,WALLS={},WPICK=[],WALLREG=false;
 const FINS=['สีทาเรียบ','หินตกแต่ง','อิฐโชว์','ผนังไม้','กระเบื้อง 30×60','ปูนเปลือย','วอลเปเปอร์','หินอ่อน','ผนังแบ่งแผง'];
-function featureFin(axis,c,a0,z){z=z%100;if(z===1&&axis==='x'&&Math.abs(c-9.6)<.01)return 7;if(z===9&&axis==='z'&&Math.abs(c-12)<.01)return 3;if(z===5&&axis==='x'&&Math.abs(c-.1)<.01&&a0>=8.5)return 3;return null;}
+function featureFin(axis,c,a0,z){z=z%100;if(z===1&&axis==='x'&&Math.abs(c-9.6)<.01)return 7;if(z===9&&axis==='z'&&Math.abs(c-12)<.01)return 3;return null;}
 function zoneFin(z){z=z%100;return z===0?(S.extFin||0):((S.Z[z]&&S.Z[z].fin)||0);}
 function wall(axis,c,a0,a1,y0,y1,t,zn,zp,ops){
   const wid=WALLREG?WN++:null;
@@ -240,7 +240,7 @@ function buildHouse(){
   wall('z',4.6,0,1.2,0,7,T,0,3);
   wall('x',.1,4.5,6.3,0,7,T,0,3,[W(5.0,6.0,4.6,6.2,'win',2)]);
   wall('x',.1,6.3,8.5,0,3.75,T,0,4,[W(6.6,7.2,1.6,2.6,'win',1)]);
-  wall('x',.1,8.5,14.8,0,3.75,T,0,5,[W(9.0,11.0,1.2,2.8,'win',2)]);
+  wall('x',.1,8.5,14.8,0,3.75,T,0,5);
   wall('x',.1,6.3,10.1,3.75,7,T,0,11,[W(7.6,8.4,5.0,6.2,'win',1)]);
   wall('x',.1,10.1,12,3.75,7,T,0,9,[W(10.4,11.6,4.6,6.2,'win',2)]);
   wall('x',.1,12,14.8,3.75,7,T,0,5);
